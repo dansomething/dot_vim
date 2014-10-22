@@ -6,7 +6,7 @@
 " Vundle
 " ---------------
 command! ReloadVundle source ~/.vim/vundle.vim
-function PluginReloadAndRun(command)
+function! PluginReloadAndRun(command)
   :ReloadVundle
   execute a:command
 endfunction
