@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOT_VIM="https://github.com/dansomething/dot_vim.git"
+DOT_VIM="https://github.com/watsoncj/dot_vim.git"
 CMDS="git vim"
 
 VUNDLE="https://github.com/gmarik/Vundle.vim.git"
