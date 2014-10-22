@@ -211,6 +211,20 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_reuse_window = 'startify'
 let g:ctrlp_mruf_max = 350
 let g:ctrlp_mruf_default_order = 0
+autocmd FileType coffee let g:switch_custom_definitions =
+    \ [
+    \   {
+    \     '^\(\s\+\)\?describe \(''[^'']\+''\)':  '\1xdescribe \2',
+    \     '^\(\s\+\)\?xdescribe \(''[^'']\+''\)':  '\1describe.only \2',
+    \     '^\(\s\+\)\?describe.only \(''[^'']\+''\)':  '\1describe \2',
+    \   },
+    \   {
+    \     '^\(\s\+\)xit \(''[^'']\+''\)':  '\1it.only \2',
+    \     '^\(\s\+\)it.only \(''[^'']\+''\)':  '\1it \2',
+    \     '^\(\s\+\)it \(''[^'']\+''\)':  '\1xit \2',
+    \   },
+    \   [' ->', ' =>', ' (done) ->', ' (done) =>'],
+    \ ]
 
 " Leader Commands
 nnoremap <leader>t :CtrlPRoot<CR>
