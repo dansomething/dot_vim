@@ -29,6 +29,8 @@ nnoremap Y y$
 noremap H ^
 noremap L $
 
+set pastetoggle=<F2>
+
 " ---------------
 " Window Movement
 " ---------------
