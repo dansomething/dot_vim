@@ -39,7 +39,6 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'junegunn/vim-slash'
-Plug 'dansomething/vim-eclim'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/ListToggle'

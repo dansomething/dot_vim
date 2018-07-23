@@ -1,22 +1,14 @@
-nnoremap <Space>c :JavaCorrect<CR>
-nnoremap <Space>cs :Checkstyle<CR>
-nnoremap <Space>d :JavaDocComment<CR>
-nnoremap <Space>dd :JavaDocPreview<CR>
-nnoremap <Space>f :JavaFormat<CR>
-nnoremap <Space>h :JavaHierarchy<CR>
-nnoremap <Space>i :JavaImport<CR>
-nnoremap <Space>io :JavaImportOrganize<CR>
-nnoremap <Space>m :JavaMove<space>
+" https://github.com/Valloric/YouCompleteMe#java
+nnoremap <Space>c :YcmCompleter FixIt<CR>
+nnoremap <Space>dd :YcmCompleter GetDoc<CR>
+nnoremap <Space>f :YcmCompleter Format<CR>
+nnoremap <Space>io :YcmCompleter OrganizeImports<CR>
 nnoremap <Space>o :execute "Dispatch! open -a Eclipse " . expand('%')<CR>
-nnoremap <Space>p :ProjectProblems!<CR>
-nnoremap <Space>pr :ProjectRefresh<CR>
-nnoremap <Space>pra :ProjectRefreshAll<CR>
-nnoremap <Space>r :JavaRename <c-r><c-w>
-nnoremap <Space>sc :JavaSearchContext<CR>
-nnoremap <Space>si :JavaSearch -x implementors -a vsplit<CR>
-nnoremap <Space>sr :JavaSearch -x references -s all<CR>
-nnoremap <Space>st :JavaSearch -t type -s all -p
-nnoremap <Space>xt :JUnit %<CR>
+nnoremap <Space>p :YcmDiags<CR>
+nnoremap <Space>r :YcmCompleter RefactorRename <c-r><c-w>
+nnoremap <Space>si :YcmCompleter GoTo<CR>
+nnoremap <Space>sr :YcmCompleter GoToReferences<CR>
+nnoremap <Space>xt :TestNearest<CR>
 
 " Enable SplitJoin for Java files
 " https://github.com/AndrewRadev/splitjoin.vim/issues/33#issuecomment-44213183
