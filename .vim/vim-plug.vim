@@ -100,6 +100,9 @@ Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+"   Kotlin
+Plug 'prabirshrestha/vim-lsp' | Plug 'prabirshrestha/async.vim'
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 "   HTML
 Plug 'vim-scripts/indenthtml.vim', { 'for': ['html'] }
 Plug 'othree/html5.vim', { 'for': ['html'] }
