@@ -7,7 +7,8 @@ if executable('kotlin-language-server')
         \ })
 endif
 
-autocmd FileType kotlin setlocal omnifunc=lsp#complete
+setlocal omnifunc=lsp#complete
+setlocal commentstring=\/\/\ %s
 
 " :LspDocumentDiagnostics  Get current document diagnostics information
 " :LspDefinition  Go to definition
@@ -28,3 +29,6 @@ nnoremap <Space>p :LspDocumentDiagnostics<CR>
 nnoremap <Space>r :LspRename <c-r><c-w>
 nnoremap <Space>si :LspDefinition<CR>
 nnoremap <Space>sr :LspReferences  <CR>
+nnoremap <Space>xt :TestNearest<CR>
+
+let test#custom_runners.Kotlin = ['Gradletest', 'Maventest']
