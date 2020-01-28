@@ -1,4 +1,4 @@
-" let g:vimspector_enable_mappings = 'HUMAN'
+" https://github.com/puremourning/vimspector
 
 nmap <F3> <Plug>VimspectorToggleBreakpoint
 nmap <F4> <Plug>VimspectorAddFunctionBreakpoint
