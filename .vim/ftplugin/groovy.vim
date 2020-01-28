@@ -1,4 +1,4 @@
-let test#custom_runners.Groovy = ['Maventest']
+let g:test#custom_runners.Groovy = ['Maventest']
 
 " Enable SplitJoin for Groovy files
 " https://github.com/AndrewRadev/splitjoin.vim/issues/33#issuecomment-44213183

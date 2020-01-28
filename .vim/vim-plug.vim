@@ -86,12 +86,7 @@ Plug 'tpope/vim-projectionist', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 " Misc
-if (has("nvim"))
-  Plug 'idanarye/vim-vebugger', { 'branch': 'develop' } | Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-else
-  " Better java debugger, but it doesn't work in nvim :(
-  Plug 'https://gitlab.com/Dica-Developer/vim-jdb.git'
-endif
+Plug 'puremourning/vimspector'
 Plug 'dansomething/vim-hackernews', { 'on': 'HackerNews' }
 
 " Add plugins to &runtimepath
