@@ -10,8 +10,9 @@ function! ale_linters#groovy#codenarc#Handle(buffer, lines) abort
     let l:output = []
 
     for l:match in ale#util#GetMatches(a:lines, l:pattern)
+        let l:priority = str2nr(l:match[2])
         call add(l:output, {
-        \   'type': l:match[2] ==# 0 ? 'E' : l:match[1] ==# 1 ? 'W' : 'I',
+        \   'type': priority <= 1 ? 'E' : priority > 2 ? 'I' : 'W',
         \   'lnum': l:match[3] + 0,
         \   'text': l:match[4],
         \   'code': l:match[1] . ' `' . l:match[5] . '`'
