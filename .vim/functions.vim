@@ -46,8 +46,8 @@ endfunction
 command! WriteBufferIfAble call WriteBufferIfAble()
 
 function! CRWriteIfNecessary()
-  if &filetype == "qf"
-    " Execute a normal enter when in Quickfix list.
+  if index(['qf', 'vim'], &filetype) >= 0
+    " Execute a normal enter when in Quickfix or Command History list.
     execute "normal! \<enter>"
   else
     WriteBufferIfAble
