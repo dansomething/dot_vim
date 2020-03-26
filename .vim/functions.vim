@@ -48,7 +48,7 @@ command! WriteBufferIfAble call WriteBufferIfAble()
 function! CRWriteIfNecessary()
   let l:ignoreFileTypes = ['qf']
   if index(ignoreFileTypes, &filetype) >= 0 || bufname('%') =~# 'Command Line'
-    " Execute a normal enter when in Quickfix or Command History list.
+    " Execute a normal enter when in Quickfix or 'Command Line' buffer.
     execute "normal! \<enter>"
   else
     WriteBufferIfAble
