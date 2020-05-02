@@ -14,7 +14,8 @@ call plug#begin('~/.vim/bundle')
 " ---------------
 " Plug Bundles
 " ---------------
-
+" https://github.com/dansomething/dot_vim#plugin-list
+" ---------------
 Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
@@ -48,7 +49,7 @@ Plug 'mbbill/undotree', { 'on':  ['UndotreeShow', 'UndotreeToggle'] }
 Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', {'tag': '*'}
+Plug 'neoclide/coc.nvim', { 'tag': '*' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'puremourning/vimspector'
 Plug 'samsonw/vim-task', { 'for': 'task' }
