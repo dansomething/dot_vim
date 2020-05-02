@@ -24,6 +24,8 @@ endif
 
 set background=dark
 colorscheme jellybeans
+" Match SignColumn background to normal background
+let g:jellybeans_overrides = { 'SignColumn': { 'guibg': 'black' } }
 
 " -----------------------------
 " File Locations
