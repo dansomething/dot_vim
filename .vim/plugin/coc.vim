@@ -132,4 +132,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>lr  :<C-u>CocListResume<CR>
 
 " make error text highlight red
-highlight CocErrorHighlight ctermfg=Red  guifg=#ff0000
+highlight CocErrorHighlight ctermfg=Red guifg=#ff0000
+" make info sign hightlight blue
+highlight link CocInfoSign CocHintSign
+" make ALE highlights match coc
+highlight link ALEErrorSign          CocErrorSign
+highlight link ALEError              CocErrorHighlight
+highlight link ALEVirtualTextError   ALEErrorSign
+highlight link ALEWarningSign        CocWarningSign
+highlight link ALEWarning            CocWarningHighlight
+highlight link ALEVirtualTextWarning ALEWarningSign
+highlight link ALEInfoSign           CocInfoSign
+highlight link ALEInfo               CocInfoHighlight
+highlight link ALEVirtualTextInfo    AleInfoSign
