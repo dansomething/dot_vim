@@ -3,8 +3,8 @@
 " Only use COC.nvim for now
 let g:ale_completion_enabled = 0
 
-" Only validate on save
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter = 1
+" After open only validate on save
 let g:ale_lint_on_text_changed = "never"
 
 let g:airline#extensions#ale#enabled = 0
