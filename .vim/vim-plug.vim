@@ -73,14 +73,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'whiteinge/diffconflicts'
 " Language Additions
 Plug 'sheerun/vim-polyglot'
-"   Clojure
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'guns/vim-slamhound', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'tpope/vim-projectionist', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 " Misc
 Plug 'puremourning/vimspector'
 Plug 'dansomething/vim-hackernews', { 'on': 'HackerNews' }
