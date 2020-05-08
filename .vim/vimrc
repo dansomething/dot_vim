@@ -8,8 +8,6 @@ source ~/.vim/platforms.vim
 source ~/.vim/config.vim
 " All hotkeys, not dependant on plugins, are mapped here.
 source ~/.vim/mappings.vim
-" Eclim-specific configuration.
-source ~/.vim/eclim.vim
 " Small custom functions.
 source ~/.vim/functions.vim
 " Auto commands.
