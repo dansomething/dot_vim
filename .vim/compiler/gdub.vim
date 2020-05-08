@@ -1,10 +1,10 @@
 " Vim Compiler File
 " Compiler: gdub
 
-if exists("current_compiler")
+if exists("g:current_compiler")
     finish
 endif
-let current_compiler = "gdub"
+let g:current_compiler = "gdub"
 
 if exists(":CompilerSet") != 2 " older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>

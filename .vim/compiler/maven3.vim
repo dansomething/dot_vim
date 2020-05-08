@@ -2,10 +2,10 @@
 " Compiler: maven3
 " Based on maven2
 
-if exists("current_compiler")
+if exists("g:current_compiler")
     finish
 endif
-let current_compiler = "maven3"
+let g:current_compiler = "maven3"
 
 if exists(":CompilerSet") != 2    " older Vim always used :setlocal
   command -nargs=* CompilerSet setlocal <args>

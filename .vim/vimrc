@@ -16,7 +16,7 @@ source ~/.vim/autocmds.vim
 source ~/.vim/largefiles.vim
 
 " Extra local only config that is not committed
-let extraFile=expand("~/.vim/extra.vim")
-if filereadable(extraFile)
+let s:extraFile=expand("~/.vim/extra.vim")
+if filereadable(s:extraFile)
   exe "source" . extraFile
 endif
