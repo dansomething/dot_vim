@@ -4,19 +4,19 @@ set nocompatible " be iMproved
 " https://vimways.org/2018/from-vimrc-to-vim/
 
 " All of the plugins are installed with vim-plug from this file.
-source ~/.vim/vim-plug.vim
+runtime vim-plug.vim
 " Platform (Windows, Mac, etc.) configuration.
-source ~/.vim/platforms.vim
+runtime platforms.vim
 " All of the Vim configuration.
-source ~/.vim/config.vim
+runtime config.vim
 " All hotkeys, not dependant on plugins, are mapped here.
-source ~/.vim/mappings.vim
+runtime mappings.vim
 " Small custom functions.
-source ~/.vim/functions.vim
+runtime functions.vim
 " Auto commands.
-source ~/.vim/autocmds.vim
+runtime autocmds.vim
 " Attempt to speed up large file handling
-source ~/.vim/largefiles.vim
+runtime largefiles.vim
 
 " Extra local only config that is not committed
 let s:extraFile=expand("~/.vim/extra.vim")
