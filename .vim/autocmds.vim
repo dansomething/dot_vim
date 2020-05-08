@@ -21,8 +21,6 @@ if has("autocmd")
           \   exe "normal! g`\"" |
           \ endif
 
-    autocmd BufRead,BufNewFile .jshintrc,.bowerrc,.firebaserc,.stylelintrc set filetype=json
-
     " https://vim.fandom.com/wiki/Automatically_fitting_a_quickfix_window_height
     au FileType qf call AdjustWindowHeight(4, 20)
     function! AdjustWindowHeight(minheight, maxheight)
