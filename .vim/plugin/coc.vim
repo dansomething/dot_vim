@@ -131,6 +131,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>lr  :<C-u>CocListResume<CR>
 
+" make error text highlight red
+highlight CocErrorHighlight ctermfg=Red guifg=#ff0000
 " make info sign hightlight blue
 highlight link CocInfoSign           CocHintSign
 " make ALE highlights match coc
