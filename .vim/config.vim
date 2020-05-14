@@ -24,8 +24,8 @@ endif
 
 set background=dark
 colorscheme jellybeans
-" Match SignColumn background to normal background
-let g:jellybeans_overrides = { 'SignColumn': { 'guibg': 'black' } }
+" Match SignColumn background to normal background for a "transparent" gutter
+let g:jellybeans_overrides = { 'SignColumn': { 'guibg': 'NONE' } }
 
 " -----------------------------
 " File Locations
