@@ -24,7 +24,7 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'Valloric/ListToggle'
 Plug 'andymass/vim-matchup'
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss'] }
-Plug 'artnez/vim-wipeout'
+Plug 'artnez/vim-wipeout', { 'on': ['Wipeout'] }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dansomething/vim-hackernews', { 'on': 'HackerNews' }
 Plug 'dense-analysis/ale'
