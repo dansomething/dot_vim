@@ -2,7 +2,7 @@
 " vim-plug
 " ----------------------------------------
 
-" auto install vim-plug and plugins
+" Auto install vim-plug and plugins on first load
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -20,7 +20,6 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat'] }
-Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'Valloric/ListToggle'
 Plug 'andymass/vim-matchup'
@@ -69,7 +68,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/UnconditionalPaste'
 Plug 'whiteinge/diffconflicts'
 Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
