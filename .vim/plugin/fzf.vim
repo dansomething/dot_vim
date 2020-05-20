@@ -14,7 +14,7 @@ function! s:all_files()
   \ map(filter(range(1, bufnr('$')), 'buflisted(v:val)'), 'bufname(v:val)'))
 endfunction
 
-" Leader Commands
+" Leader Commands (to match my old ctrlp habits)
 nnoremap <leader>t :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>u :History<CR>
@@ -28,9 +28,9 @@ nnoremap <leader>gf :GFiles?<CR>
 " bind ag to grep word under cursor
 vnoremap <leader>ag "xy :Rg <C-R>x
 " bind K to grep highlighted text
-vnoremap K "xy :Rg <C-R>x<CR>
+vnoremap <leader>k "xy :Rg <C-R>x<CR>
 " bind K to grep word under cursor
-nnoremap K :Rg <C-R><C-W><CR>
+nnoremap <leader>k :Rg <C-R><C-W><CR>
 
 " https://github.com/junegunn/fzf.vim#advanced-customization
 command! -bang -nargs=* Rg
