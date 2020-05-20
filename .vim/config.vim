@@ -54,15 +54,6 @@ set textwidth=120  " 80 is too narrow anymore
 if exists('+colorcolumn')
   set colorcolumn=120 " Color the 120th column differently as a wrapping guide.
 endif
-" Disable tooltips for hovering keywords in Vim
-if exists('+ballooneval')
-  " This doesn't seem to stop tooltips for Ruby files
-  set noballooneval
-  " This should stop tooltips for Ruby files
-  autocmd FileType ruby setlocal balloonexpr=
-  " 100 second delay seems to be the only way to disable the tooltips
-  set balloondelay=100000
-endif
 
 " ---------------
 " Behaviors
