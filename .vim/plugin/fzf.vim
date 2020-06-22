@@ -1,5 +1,8 @@
 "junegunn/fzf.vim
 
+" Enable floating window
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
 " https://github.com/junegunn/fzf/wiki/Examples-(vim)#simple-mru-search
 command! FZFMru call fzf#run({
 \ 'source':  reverse(s:all_files()),
