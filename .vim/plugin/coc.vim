@@ -116,23 +116,47 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" Mappings using CoCList:
+if has('nvim')
+  " Mappings using coc-fzf
 " Show all diagnostics.
-nnoremap <silent> <space>p  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <space>lr  :<C-u>CocListResume<CR>
+  nnoremap <silent> <space>pp  :<C-u>CocFzfList diagnostics<cr>
+" Show current buffer diagnostics.
+  nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics<cr>
+  " Manage extensions.
+  nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<cr>
+  " Show commands.
+  nnoremap <silent> <space>c  :<C-u>CocFzfList commands<cr>
+  " Find symbol of current document.
+  nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
+  " Search workspace symbols.
+  nnoremap <silent> <space>s  :<C-u>CocFzfList -I symbols<cr>
+  nnoremap <silent> <space>S  :<C-u>CocFzfList services<cr>
+  " Do default action for next item.
+  nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+  " Do default action for previous item.
+  nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+  " Resume latest coc list.
+  nnoremap <silent> <space>lr  :<C-u>CocFzfListResume<CR>
+  nnoremap <silent> <space>l  :<C-u>CocFzfList location<cr>
+else
+  " Mappings using CoCList:
+  " Show all diagnostics.
+  nnoremap <silent> <space>p  :<C-u>CocList diagnostics<cr>
+  " Manage extensions.
+  nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+  " Show commands.
+  nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+  " Find symbol of current document.
+  nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+  " Search workspace symbols.
+  nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+  " Do default action for next item.
+  nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+  " Do default action for previous item.
+  nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+  " Resume latest coc list.
+  nnoremap <silent> <space>lr  :<C-u>CocListResume<CR>
+endif
 
 " make error text highlight red
 highlight CocErrorHighlight ctermfg=Red guifg=#ff0000

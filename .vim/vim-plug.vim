@@ -72,5 +72,9 @@ Plug 'whiteinge/diffconflicts'
 Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
 
+if has('nvim')
+  Plug 'antoinemadec/coc-fzf'
+endif
+
 " Add plugins to &runtimepath
 call plug#end()
