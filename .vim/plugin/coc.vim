@@ -86,8 +86,13 @@ endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
-" Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
+if has('nvim')
+  " Mappings using coc-fzf
+  nmap <leader>ac  :<C-u>CocFzfList actions<CR>
+else
+  " Remap keys for applying codeAction to the current line.
+  nmap <leader>ac  <Plug>(coc-codeaction)
+endif
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
@@ -123,7 +128,7 @@ if has('nvim')
 " Show all diagnostics.
   nnoremap <silent> <space>pp  :<C-u>CocFzfList diagnostics<cr>
 " Show current buffer diagnostics.
-  nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics<cr>
+  nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics --current-buf<cr>
   " Manage extensions.
   nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<cr>
   " Show commands.
@@ -131,7 +136,7 @@ if has('nvim')
   " Find symbol of current document.
   nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
   " Search workspace symbols.
-  nnoremap <silent> <space>s  :<C-u>CocFzfList -I symbols<cr>
+  nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<cr>
   nnoremap <silent> <space>S  :<C-u>CocFzfList services<cr>
   " Do default action for next item.
   nnoremap <silent> <space>j  :<C-u>CocNext<CR>
