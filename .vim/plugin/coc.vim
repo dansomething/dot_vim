@@ -125,9 +125,9 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 if has('nvim')
   " Mappings using coc-fzf
-" Show all diagnostics.
+  " Show all diagnostics.
   nnoremap <silent> <space>pp  :<C-u>CocFzfList diagnostics<cr>
-" Show current buffer diagnostics.
+  " Show current buffer diagnostics.
   nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics --current-buf<cr>
   " Manage extensions.
   nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<cr>
