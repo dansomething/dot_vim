@@ -2,6 +2,8 @@
 
 " Enable floating window
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+let g:fzf_preview_window = 'right:50%:hidden'
+let g:coc_fzf_preview = g:fzf_preview_window
 
 " https://github.com/junegunn/fzf/wiki/Examples-(vim)#simple-mru-search
 command! FZFMru call fzf#run({
@@ -34,11 +36,3 @@ vnoremap <leader>ag "xy :Rg <C-R>x
 vnoremap <leader>k "xy :Rg <C-R>x<CR>
 " bind K to grep word under cursor
 nnoremap <leader>k :Rg <C-R><C-W><CR>
-
-" https://github.com/junegunn/fzf.vim#advanced-customization
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
