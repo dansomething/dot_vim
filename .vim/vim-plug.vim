@@ -23,6 +23,7 @@ Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat'] }
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'Valloric/ListToggle'
 Plug 'andymass/vim-matchup'
+Plug 'antoinemadec/coc-fzf', { 'branch': 'release' }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss'] }
 Plug 'artnez/vim-wipeout', { 'on': ['Wipeout'] }
 Plug 'christoomey/vim-tmux-navigator'
@@ -71,10 +72,6 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'whiteinge/diffconflicts'
 Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
-
-if has('nvim')
-  Plug 'antoinemadec/coc-fzf'
-endif
 
 " Add plugins to &runtimepath
 call plug#end()
