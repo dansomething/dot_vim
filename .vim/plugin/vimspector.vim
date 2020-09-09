@@ -13,7 +13,7 @@ nmap <F7> <Plug>VimspectorStepOut
 nmap <F8> <Plug>VimspectorContinue
 nmap <F9> <Plug>VimspectorStop
 nmap <F11> <Plug>VimspectorRestart
-nmap <F12> :call vimspector#Reset()<CR>
+nmap <F12> :VimspectorReset<CR>
 
 function! s:CustomizeVimspectorUI()
   " Close the output window
