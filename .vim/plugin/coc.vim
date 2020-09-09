@@ -26,21 +26,23 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has("nvim")
+if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
-  inoremap <silent><expr> <NUL> coc#refresh()
+  inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
@@ -79,35 +81,40 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Remap for codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-
 if has('nvim')
-  " Mappings using coc-fzf
-  nmap <leader>ac  :<C-u>CocFzfList actions<CR>
+  " Remap for codeAction of selected region
+  function! s:cocActionsOpenFromSelected(type) abort
+    execute 'CocCommand actions.open ' . a:type
+  endfunction
+  xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+  nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 else
-  " Remap keys for applying codeAction to the current line.
-  nmap <leader>ac  <Plug>(coc-codeaction)
+  " Applying codeAction to the selected region.
+  " Example: `<leader>aap` for current paragraph
+  xmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
+  nmap <silent> <leader>a  <Plug>(coc-codeaction-selected)
 endif
+
+" Mappings using coc-fzf
+nmap <silent> <leader>ac  :<C-u>CocFzfList actions<CR>
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Introduce function text object
+" Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
 omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
-" Use <TAB> for selections ranges.
-" NOTE: Requires 'textDocument/selectionRange' support from the language server.
-" coc-tsserver, coc-python are the examples of servers that support it.
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -123,47 +130,27 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-if has('nvim')
-  " Mappings using coc-fzf
-  " Show all diagnostics.
-  nnoremap <silent> <space>pp  :<C-u>CocFzfList diagnostics<cr>
-  " Show current buffer diagnostics.
-  nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics --current-buf<cr>
-  " Manage extensions.
-  nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<cr>
-  " Show commands.
-  nnoremap <silent> <space>c  :<C-u>CocFzfList commands<cr>
-  " Find symbol of current document.
-  nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
-  " Search workspace symbols.
-  nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<cr>
-  nnoremap <silent> <space>S  :<C-u>CocFzfList services<cr>
-  " Do default action for next item.
-  nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-  " Do default action for previous item.
-  nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-  " Resume latest coc list.
-  nnoremap <silent> <space>lr  :<C-u>CocFzfListResume<CR>
-  nnoremap <silent> <space>l  :<C-u>CocFzfList location<cr>
-else
-  " Mappings using CoCList:
-  " Show all diagnostics.
-  nnoremap <silent> <space>p  :<C-u>CocList diagnostics<cr>
-  " Manage extensions.
-  nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-  " Show commands.
-  nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-  " Find symbol of current document.
-  nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-  " Search workspace symbols.
-  nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-  " Do default action for next item.
-  nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-  " Do default action for previous item.
-  nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-  " Resume latest coc list.
-  nnoremap <silent> <space>lr  :<C-u>CocListResume<CR>
-endif
+" Mappings using coc-fzf
+" Show all diagnostics.
+nnoremap <silent> <space>pp  :<C-u>CocFzfList diagnostics<cr>
+" Show current buffer diagnostics.
+nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics --current-buf<cr>
+" Manage extensions.
+nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<cr>
+" Show commands.
+nnoremap <silent> <space>c  :<C-u>CocFzfList commands<cr>
+" Find symbol of current document.
+nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
+" Search workspace symbols.
+nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<cr>
+nnoremap <silent> <space>S  :<C-u>CocFzfList services<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent> <space>lr  :<C-u>CocFzfListResume<CR>
+nnoremap <silent> <space>l  :<C-u>CocFzfList location<cr>
 
 " make error text highlight red
 highlight CocErrorHighlight ctermfg=Red guifg=#ff0000

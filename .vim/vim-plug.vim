@@ -49,7 +49,7 @@ Plug 'mbbill/undotree', { 'on':  ['UndotreeShow', 'UndotreeToggle'] }
 Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neoclide/coc.nvim', { 'tag': '*' }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'puremourning/vimspector'
 Plug 'samsonw/vim-task', { 'for': 'task' }
