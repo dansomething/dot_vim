@@ -194,3 +194,16 @@ function! ClearRegisters()
     endwhile
 endfunction
 command! ClearRegisters call ClearRegisters()
+
+" ---------------------------------------------------------
+" Toggle whitespace in diff
+" https://vim.fandom.com/wiki/Ignore_white_space_in_vimdiff
+" ---------------------------------------------------------
+function! IwhiteToggle()
+  if &diffopt =~ 'iwhite'
+    set diffopt-=iwhite
+  else
+    set diffopt+=iwhite
+  endif
+endfunction
+nnoremap tw :call IwhiteToggle()<CR>

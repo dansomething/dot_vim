@@ -120,7 +120,7 @@ set showmatch   " Show matching brackets.
 set matchtime=2 " How many tenths of a second to blink
 " Show invisible characters
 set list
-" Ignore whitespace changes in vimdiff
+" Ignore whitespace changes in diffs
 set diffopt+=iwhite
 " Disable autocomplete scratch buffer
 set completeopt-=preview
