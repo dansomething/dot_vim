@@ -2,8 +2,8 @@
 
 " Enable floating window
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-let g:fzf_preview_window = 'right:50%:hidden'
-let g:coc_fzf_preview = g:fzf_preview_window
+let g:coc_fzf_preview  = 'right:50%:hidden'
+let g:fzf_preview_window = [g:coc_fzf_preview, '?']
 
 " https://github.com/junegunn/fzf/wiki/Examples-(vim)#simple-mru-search
 command! FZFMru call fzf#run({
