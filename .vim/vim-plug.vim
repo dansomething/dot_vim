@@ -19,7 +19,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'AndrewRadev/sideways.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
-Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat'] }
+Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat', 'CurrentFormat'] }
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'Valloric/ListToggle'
 Plug 'andymass/vim-matchup'
