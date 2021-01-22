@@ -84,6 +84,10 @@ augroup end
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
+" Trigger for code actions
+" Make sure `"codeLens.enable": true` is set in your coc config
+nnoremap <leader>cl :<C-u>call CocActionAsync('codeLensAction')<CR>
+
 " Mappings using coc-fzf
 nmap <silent> <leader>ac  :<C-u>CocFzfList actions<CR>
 " Apply AutoFix to problem on the current line.
