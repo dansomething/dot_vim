@@ -8,5 +8,5 @@ let g:tmuxline_preset = {
     \ 'cwin' : ['#I', '#W'],
     \ 'x'    : ['%I:%M %p'],
     \ 'y'    : '⚡️#(battery)',
-    \ 'z'    : '#(tmux-mem-cpu-load -a0 --interval 2 -g0)'
+    \ 'z'    : '#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -a0 --interval 2 -g0)'
     \ }
