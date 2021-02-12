@@ -146,7 +146,7 @@ nnoremap <silent> <space>lr  :<C-u>CocFzfListResume<CR>
 nnoremap <silent> <space>l  :<C-u>CocFzfList location<cr>
 
 " Remove background from floating messages
-highlight CocFloating ctermbg=Black guibg=#151515
+highlight CocFloating ctermbg=Black guibg=#000000
 " make error text highlight red
 highlight CocErrorHighlight ctermfg=Red guifg=#ff0000
 " make info sign hightlight blue
