@@ -44,7 +44,9 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'liuchengxu/vista.vim'
-Plug 'ludovicchabant/vim-gutentags'
+if has('ctags')
+  Plug 'ludovicchabant/vim-gutentags'
+endif
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree', { 'on':  ['UndotreeShow', 'UndotreeToggle'] }
 Plug 'mhinz/vim-signify'
