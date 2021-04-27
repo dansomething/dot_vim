@@ -3,7 +3,13 @@
 " Enable floating window
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let g:coc_fzf_preview  = 'right:50%:hidden'
-let g:fzf_preview_window = [g:coc_fzf_preview, '?']
+
+" Windows/Mintty doesn't support this option.
+if has('win32unix')
+  let g:fzf_preview_window=''
+else
+   let g:fzf_preview_window = [g:coc_fzf_preview, '?']
+endif
 
 " https://github.com/junegunn/fzf/wiki/Examples-(vim)#simple-mru-search
 command! FZFMru call fzf#run({
