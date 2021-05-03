@@ -44,7 +44,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'liuchengxu/vista.vim'
-if has('ctags')
+if executable('ctags')
   Plug 'ludovicchabant/vim-gutentags'
 endif
 Plug 'mattn/emmet-vim'
