@@ -17,6 +17,8 @@ if has('gui_macvim')
 
   " Autoload NERDTree and move the cursor to the main window
   autocmd VimEnter * wincmd p
+elseif has('gui_win32')
+  set guifont=Hack\ NF:h9
 endif
 
 set visualbell " Keeps the audio bell from sounding in the GUI
