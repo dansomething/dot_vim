@@ -23,9 +23,13 @@ if (has("termguicolors"))
 endif
 
 set background=dark
-colorscheme jellybeans
-" Match SignColumn background to normal background for a "transparent" gutter
-let g:jellybeans_overrides = { 'SignColumn': { 'guibg': 'NONE' } }
+try
+  colorscheme jellybeans
+  " Match SignColumn background to normal background for a "transparent" gutter
+  let g:jellybeans_overrides = { 'SignColumn': { 'guibg': 'NONE' } }
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme desert
+endtry
 
 " -----------------------------
 " File Locations
