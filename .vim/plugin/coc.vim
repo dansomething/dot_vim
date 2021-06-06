@@ -133,9 +133,9 @@ nnoremap <silent> <space>o  :<C-u>CocFzfList outline<cr>
 nnoremap <silent> <space>s  :<C-u>CocFzfList symbols<cr>
 nnoremap <silent> <space>S  :<C-u>CocFzfList services<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>lr  :<C-u>CocFzfListResume<CR>
 nnoremap <silent> <space>l  :<C-u>CocFzfList location<cr>
