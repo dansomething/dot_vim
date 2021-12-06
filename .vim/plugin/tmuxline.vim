@@ -1,7 +1,7 @@
 "edkolev/tmuxline.vim
 
 let g:tmuxline_preset = {
-    \ 'a'    : '❐ #S#{?client_prefix, C-a,    }',
+    \ 'a'    : '❐ #S#{?client_prefix, WAIT,     }',
     \ 'b'    : '#H',
     \ 'c'    : '#(whoami)',
     \ 'win'  : ['#I', '#W'],
