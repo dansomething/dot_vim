@@ -17,22 +17,4 @@ nnoremap <Leader>gi :Git<space>
 " Undo the last commit
 command! Gcundo :Git reset HEAD~1
 
-if has("autocmd")
-  function! ToggleGStatus()
-    if buflisted(bufname('.git/index'))
-      bd .git/index
-    else
-      Git
-      25wincmd_
-    endif
-  endfunction
-  command! ToggleGStatus :call ToggleGStatus()
-  nnoremap <silent> <Leader>gs :ToggleGStatus<cr>
-
-  augroup fugitive_au
-    autocmd!
-    autocmd FileType fugitive setlocal winfixheight
-  augroup end
-else
-  nnoremap <Leader>gs :Gstatus<CR>
-endif
+nnoremap <Leader>gs :Git<CR>
