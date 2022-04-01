@@ -16,3 +16,8 @@ autocmd BufNewFile,BufRead *[Ss]pec.[jt]s,*[Ii]ntegration.[jt]s let g:switch_cus
     \   },
     \   [' () =>', ' (done) =>'],
     \ ]
+
+autocmd BufNewFile,BufRead *.md let g:switch_custom_definitions =
+    \ [
+    \   ['[ ]', '[X]'],
+    \ ]
