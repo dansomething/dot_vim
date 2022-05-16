@@ -207,3 +207,11 @@ function! IwhiteToggle()
   endif
 endfunction
 nnoremap tw :call IwhiteToggle()<CR>
+
+" ----------
+" Color Test
+" ----------
+function! ColorTest()
+  :runtime syntax/colortest.vim
+endfunction
+command! ColorTest call ColorTest()
