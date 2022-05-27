@@ -11,7 +11,7 @@ if $TERM =~ "-256color"
 endif
 
 " Use 24-bit (true-color) mode if available
-" https://github.com/neovim/neovim/wiki/FAQ#how-can-i-use-true-colors-in-the-terminal
+" https://github.com/neovim/neovim/wiki/FAQ#how-can-i-use-true-color-in-the-terminal
 if (has("termguicolors"))
   set termguicolors
   if (!has("nvim"))
