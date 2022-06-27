@@ -33,6 +33,7 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
+Plug 'fidian/hexmode'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install --frozen-lockfile', 'for': 'markdown' }
 Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestNearest'] }
