@@ -41,6 +41,9 @@ set spellfile=~/.vim/spell/custom.en.utf-8.add
 if has('persistent_undo')
   set undofile
   set undodir=~/.vim/.undo
+  if (has("nvim"))
+    set undodir=~/.vim/.undo_nvim
+  endif
 endif
 
 " ---------------

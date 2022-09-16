@@ -5,4 +5,5 @@ extra.vim
 Session.vim
 .vim/autoload/plug.vim
 .vim/.netrwhist
+.vim/.undo*
 .config/
