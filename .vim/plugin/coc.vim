@@ -133,9 +133,9 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 
 " Mappings using coc-fzf
 " Show all diagnostics
-nnoremap <silent><nowait> <space>pp  :<C-u>CocFzfList diagnostics<cr>
+nnoremap <silent> <space>pp  :<C-u>CocFzfList diagnostics<cr>
 " Show current buffer diagnostics
-nnoremap <silent><nowait> <space>p  :<C-u>CocFzfList diagnostics --current-buf<cr>
+nnoremap <silent> <space>p  :<C-u>CocFzfList diagnostics --current-buf<cr>
 " Manage extensions
 nnoremap <silent><nowait> <space>e  :<C-u>CocFzfList extensions<cr>
 " Show commands
@@ -150,8 +150,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>lr  :<C-u>CocFzfListResume<CR>
-nnoremap <silent><nowait> <space>l  :<C-u>CocFzfList location<cr>
+nnoremap <silent> <space>lr  :<C-u>CocFzfListResume<CR>
+nnoremap <silent> <space>l  :<C-u>CocFzfList location<cr>
 
 " Remove background from floating messages
 highlight CocErrorFloat ctermfg=White guifg=White
