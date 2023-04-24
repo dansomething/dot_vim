@@ -1,5 +1,4 @@
 nnoremap <Space>oe :execute "Dispatch! open -a /Applications/Eclipse.app " . expand('%')<CR>
-nnoremap <Space>io :CocCommand java.action.organizeImports
 
 " Enable SplitJoin for Java files
 " https://github.com/AndrewRadev/splitjoin.vim/issues/33#issuecomment-44213183

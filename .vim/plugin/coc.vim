@@ -130,6 +130,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+nnoremap <Space>io :OR<CR>
 
 " Mappings using coc-fzf
 " Show all diagnostics
