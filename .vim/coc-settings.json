@@ -4,5 +4,5 @@
   "diagnostic.warningSign": "⚠",
   "snippets.priority": 100,
   "suggest.autoTrigger": "trigger",
-  "suggest.triggerCompletionWait": 60
+  "suggest.triggerCompletionWait": 50
 }
