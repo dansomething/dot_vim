@@ -26,6 +26,7 @@ Plug 'andymass/vim-matchup'
 Plug 'antoinemadec/coc-fzf', { 'branch': 'release' }
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss'] }
 Plug 'artnez/vim-wipeout', { 'on': ['Wipeout'] }
+Plug 'charlespascoe/vim-go-syntax'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dansomething/vim-hackernews', { 'on': 'HackerNews' }
 Plug 'dense-analysis/ale'
