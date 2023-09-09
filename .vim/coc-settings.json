@@ -1,8 +1,8 @@
 {
   "diagnostic.errorSign": "✗",
-  "diagnostic.infoSign": ">>",
+  "diagnostic.infoSign": "i",
   "diagnostic.warningSign": "⚠",
-  "snippets.priority": 100,
+  "diagnostic.hintSign": "➤",
   "suggest.autoTrigger": "trigger",
   "suggest.triggerCompletionWait": 50
 }
