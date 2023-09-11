@@ -10,7 +10,7 @@ let g:ale_lint_on_text_changed = 'never'
 
 let g:airline#extensions#ale#enabled = 0
 
-# Use standard vim diagnostics for better coc.nvim compatibility
+" Use standard vim diagnostics for better coc.nvim compatibility
 let g:ale_use_neovim_diagnostics_api = 0 " default has('nvim-0.6')
 
 " Only show virtualtext on current line. matches coc.nvim config
