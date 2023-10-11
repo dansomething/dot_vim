@@ -37,7 +37,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'fidian/hexmode'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install --frozen-lockfile', 'for': 'markdown' }
-Plug 'janko-m/vim-test', { 'on': ['TestFile', 'TestNearest'] }
+Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
@@ -79,3 +79,6 @@ Plug 'yssl/QFEnter'
 
 " Add plugins to &runtimepath
 call plug#end()
+
+set rtp+=~/dev/projects/coc-groovy
+set rtp+=~/dev/projects/coc-java-debug
