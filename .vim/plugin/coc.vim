@@ -1,5 +1,11 @@
 "neoclide/coc.nvim
 
+" :help CocTagFunc
+" TODO Might not want this enabled for all languages?
+if exists('&tagfunc')
+  set tagfunc=CocTagFunc
+endif
+
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
 set updatetime=300
