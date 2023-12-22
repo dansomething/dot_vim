@@ -1,5 +1,13 @@
 "neoclide/coc.nvim
 
+" https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
+" Automatically install these frequently used extensions if not installed.
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-snippets',
+      \ 'coc-vimlsp',
+      \ ]
+
 " :help CocTagFunc
 " TODO Might not want this enabled for all languages?
 if exists('&tagfunc')
