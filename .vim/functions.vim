@@ -186,14 +186,22 @@ nnoremap mT :call MoveToPrevTab()<CR>
 " https://kba49.wordpress.com/2013/03/21/clear-all-registers-and-macros-in-vim/
 " ---------------
 function! ClearRegisters()
-    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
-    let i=0
-    while (i<strlen(regs))
-        exec 'let @'.regs[i].'=" "'
-        let i=i+1
-    endwhile
+  let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="*+'
+  let i=0
+  while (i<strlen(regs))
+    exec 'let @'.regs[i].'=" "'
+    let i=i+1
+  endwhile
 endfunction
 command! ClearRegisters call ClearRegisters()
+
+" ---------------
+" https://stackoverflow.com/a/11450865
+" ---------------
+function! ClearMarks()
+  delm! | delm A-Z0-9\"
+endfunction
+command! ClearMarks call ClearMarks()
 
 " ---------------------------------------------------------
 " Toggle whitespace in diff
