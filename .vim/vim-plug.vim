@@ -79,6 +79,3 @@ Plug 'yssl/QFEnter'
 
 " Add plugins to &runtimepath
 call plug#end()
-
-set rtp+=~/dev/projects/coc-groovy
-set rtp+=~/dev/projects/coc-java-debug
