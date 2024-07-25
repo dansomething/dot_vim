@@ -1,5 +1,9 @@
 "edkolev/tmuxline.vim
 
+" Disable when not needed to avoid conflict with tmux plugin manager.
+" https://github.com/edkolev/tmuxline.vim/issues/46
+let g:airline#extensions#tmuxline#enabled = 0
+
 let g:tmuxline_preset = {
     \ 'a'    : '❐ #S#{tmux_mode_indicator}',
     \ 'b'    : '#H',
