@@ -27,8 +27,8 @@
 
 **Mac**
 
- * [MacVim](http://macvim-dev.github.io/macvim/) - I'm currenty using
- the latest stable (8.0) from [Homebrew](http://brew.sh) on Sierra.
+ * [MacVim](http://macvim.org) - I'm currenty using
+ the latest stable (9.0) from [Homebrew](http://brew.sh) on MacOS Sonoma.
 
 ## Bindings
 
