@@ -36,7 +36,7 @@
 * Pressing `enter` in normal mode saves the current buffer.
 
 And many more. See [`mappings.vim`](.vim/mappings.vim) and
-[`plugins.vim`](.vim/plugins.vim) for more.
+[`plugin`](.vim/plugin) for more.
 
 ## Plugin Installation / Requirements
 
