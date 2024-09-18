@@ -46,10 +46,6 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'liuchengxu/vista.vim'
-if executable('ctags')
-  Plug 'ludovicchabant/vim-gutentags'
-endif
-Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree', { 'on':  ['UndotreeShow', 'UndotreeToggle'] }
 Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
@@ -57,7 +53,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'puremourning/vimspector'
-Plug 'samsonw/vim-task', { 'for': 'taskedit' }
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'tmux-plugins/vim-tmux-focus-events'
