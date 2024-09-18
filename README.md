@@ -48,10 +48,10 @@ dependencies.
 
 * [Fugitive](https://github.com/tpope/vim-fugitive) Requires Git to be
   installed to be useful.
-* [ALE](https://github.com/w0rp/ale) Requires many different
+* [ALE](https://github.com/dense-analysis/ale) Requires many different
   binaries to be installed depending on what filetypes you want it to check. See the
-  [Readme](https://github.com/w0rp/ale#supported-languages) for more information.
-* [Hack (for Powerline)](https://git.io/vgUwx) The custom font I'm using
+  [Readme](https://github.com/dense-analysis/ale?tab=readme-ov-file#supported-languages-and-tools) for more information.
+* [Hack (for Powerline)](https://github.com/powerline/fonts/tree/master/Hack) The custom font I'm using
   for vim-airline.
 
 ## Plugin List
