@@ -17,4 +17,4 @@ nnoremap <Leader>gi :Git<space>
 " Undo the last commit
 command! Gcundo :Git reset HEAD~1
 
-nnoremap <Leader>gs :Git<CR>
+nnoremap <Leader>gs :20split\|0Git<CR>
