@@ -49,9 +49,9 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree', { 'on':  ['UndotreeShow', 'UndotreeToggle'] }
 Plug 'mhinz/vim-signify'
 Plug 'nanotech/jellybeans.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'preservim/vim-indent-guides'
 Plug 'puremourning/vimspector'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
