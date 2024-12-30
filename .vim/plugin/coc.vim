@@ -4,8 +4,10 @@
 " Automatically install these frequently used extensions if not installed.
 let g:coc_global_extensions = [
       \ 'coc-json',
+      \ 'coc-sh',
       \ 'coc-snippets',
       \ 'coc-vimlsp',
+      \ 'coc-yaml',
       \ ]
 
 " :help CocTagFunc
