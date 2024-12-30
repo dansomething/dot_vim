@@ -3,6 +3,7 @@ sessions
 .DS_Store
 extra.vim
 Session.vim
+!.vim/
 .vim/autoload/plug.vim
 .vim/.netrwhist
 .vim/.undo*
