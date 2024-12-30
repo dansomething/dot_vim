@@ -41,4 +41,4 @@ _G.CloseAllFloatingWindows = function()
   print(string.format("Closed %d windows: %s", #closed_windows, vim.inspect(closed_windows)))
 end
 -- :help command-attributes
-vim.api.nvim_create_user_command("CloseAllFloatingWindows", _G.CloseAllFloatingWindows, { nargs = 0 })
+vim.api.nvim_create_user_command("CloseAllFloatingWindows", _G.CloseAllFloatingWindows, { bang = true, nargs = 0 })
