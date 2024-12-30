@@ -4,6 +4,6 @@ sessions
 extra.vim
 Session.vim
 !.vim/
-.vim/autoload/plug.vim
+.vim/autoload/
 .vim/.netrwhist
 .vim/.undo*
