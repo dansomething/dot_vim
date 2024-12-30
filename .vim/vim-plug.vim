@@ -35,6 +35,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'fidian/hexmode'
+Plug 'github/copilot.vim', { 'branch': 'release' }
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install', 'for': 'markdown' }
 Plug 'janko-m/vim-test'
@@ -71,6 +72,10 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'whiteinge/diffconflicts'
 Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
+
+if has('nvim')
+  Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' } | Plug 'nvim-lua/plenary.nvim'
+endif
 
 " Add plugins to &runtimepath
 call plug#end()

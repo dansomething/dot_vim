@@ -14,5 +14,7 @@
       "fileMatch": [".gadgets.json", ".gadgets.d/*.json"],
       "url": "https://puremourning.github.io/vimspector/schema/gadgets.schema.json"
     }
-  ]
+  ],
+  // https://github.com/xiyaowong/coc-sumneko-lua/blob/main/settings.md
+  "sumneko-lua.enableNvimLuaDev": true
 }
