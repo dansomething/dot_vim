@@ -3,8 +3,21 @@
   "diagnostic.infoSign": "i",
   "diagnostic.warningSign": "⚠",
   "diagnostic.hintSign": "➤",
-  "suggest.autoTrigger": "trigger",
-  "suggest.triggerCompletionWait": 50,
+  "go.goplsOptions": {
+    "codelenses": {
+      "test": true
+    },
+    // https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
+    "hints": {
+      "assignVariableTypes": false,
+      "compositeLiteralFields": true,
+      "compositeLiteralTypes": false,
+      "constantValues": true,
+      "functionTypeParameters": true,
+      "parameterNames": false,
+      "rangeVariableTypes": true
+    },
+  },
   "json.schemas": [
     {
       "fileMatch": [".vimspector.json"],
@@ -15,6 +28,8 @@
       "url": "https://puremourning.github.io/vimspector/schema/gadgets.schema.json"
     }
   ],
+  "suggest.autoTrigger": "trigger",
+  "suggest.triggerCompletionWait": 50,
   // https://github.com/xiyaowong/coc-sumneko-lua/blob/main/settings.md
   "sumneko-lua.enableNvimLuaDev": true
 }
