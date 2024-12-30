@@ -1,5 +1,8 @@
 "junegunn/fzf.vim
 
+" Enable fzf history
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 " Enable floating window
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 let g:coc_fzf_preview  = 'right:60%:hidden'
@@ -10,6 +13,23 @@ if has('win32unix')
 else
    let g:fzf_preview_window = [g:coc_fzf_preview, '?']
 endif
+
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
 
 " https://github.com/junegunn/fzf/wiki/Examples-(vim)#simple-mru-search
 command! FZFMru call fzf#run({
