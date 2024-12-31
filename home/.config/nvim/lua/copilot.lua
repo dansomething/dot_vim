@@ -33,6 +33,11 @@ chat.setup({
       mapping = "<leader>ccc",
       description = "Git commit message",
     },
+    Refactor = {
+      prompt = "You are now an expert in code maintainability. You recommend refactoring steps for the provided code without changing the functionality. Do not break the code. Make suggestions to improve the code. Pay particular attention to improving the following code qualities: readability, maintainability, modularity, extensibility, performance optimization, bug fixes, names and documentation.",
+      mapping = "<leader>ccR",
+      description = "Git commit message",
+    },
   },
 })
 
@@ -81,7 +86,6 @@ nmap("<leader>cce", ":CopilotChatExplain<CR>")
 vmap("<leader>cce", ":CopilotChatExplain<CR>")
 nmap("<leader>cct", ":CopilotChatTests<CR>")
 nmap("<leader>ccr", ":CopilotChatReview<CR>")
-nmap("<leader>ccR", ":CopilotChatRefactor<CR>")
 -- TODO Add a prompt name called BatterNamings
 -- Keymap("<leader>ccn", ":CopilotChatBetterNamings<CR>", "n")
 -- Debug
