@@ -4,8 +4,12 @@
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Enable floating window
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
-let g:coc_fzf_preview  = 'right:60%:hidden'
+if exists('$TMUX')
+  let g:fzf_layout = { 'tmux': '90%,70%' }
+else
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+endif
+let g:coc_fzf_preview  = 'right:50%:hidden'
 
 " Windows/Mintty doesn't support this option.
 if has('win32unix')
