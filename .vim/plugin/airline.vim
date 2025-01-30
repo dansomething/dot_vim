@@ -12,6 +12,7 @@ let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#vista#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline_mode_map = {
       \ '__' : '-',
