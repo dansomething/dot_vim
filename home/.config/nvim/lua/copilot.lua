@@ -7,7 +7,7 @@ local chat = require("CopilotChat")
 local select = require("CopilotChat.select")
 chat.setup({
   window = {
-    layout = "float", -- 'vertical', 'horizontal', 'float', 'replace'
+    -- layout = "float", -- 'vertical', 'horizontal', 'float', 'replace'
     -- width = 0.5, -- fractional width of parent, or absolute width in columns when > 1
     -- height = 0.5, -- fractional height of parent, or absolute height in rows when > 1
     -- Options below only apply to floating windows
@@ -34,9 +34,9 @@ chat.setup({
       description = "Git commit message",
     },
     Refactor = {
-      prompt = "You are now an expert in code maintainability. You recommend refactoring steps for the provided code without changing the functionality. Do not break the code. Make suggestions to improve the code. Pay particular attention to improving the following code qualities: readability, maintainability, modularity, extensibility, performance optimization, bug fixes, names and documentation.",
+      prompt = "> /COPILOT_REFACTOR\n\nYou are now an expert in code maintainability. You recommend refactoring steps for the provided code without changing the functionality. Do not break the code. Make suggestions to improve the code. Pay particular attention to improving the following code qualities: readability, maintainability, modularity, extensibility, performance optimization, bug fixes, names and documentation.",
       mapping = "<leader>ccR",
-      description = "Git commit message",
+      description = "Refactor code",
     },
   },
 })
