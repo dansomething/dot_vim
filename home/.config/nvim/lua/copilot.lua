@@ -29,7 +29,7 @@ chat.setup({
 
   prompts = {
     Commit = {
-      prompt = '> #git:staged\n\nWrite a commit message following the template at the top of the diff comments for the change and use the commitizen convention where appropriate. Make sure the title has a maximum of 50 characters and the message is wrapped at 72 characters. Replace everything before the colon in the title with the code area and subarea derived from the most changed file paths in the staged git diff. The code and subarea should be in the format "code/subarea" Explain the change in detail and why it is necessary. Ask me questions if you need more information to explain the why. Add this message at the top and leave everything else below untouched.',
+      prompt = '> #git:staged\n\nWrite a commit message following the example in comments at the top of the staged diff. Use the commitizen convention where appropriate. Ensure the title has a maximum of 50 characters and the message is wrapped at 72 characters. Replace everything before the colon in the title with the code area and subarea derived from the most commonly changed file paths in the diff. The code and subarea should be in the format "code/subarea". Explain the change in detail and why it is necessary. Add this message at the top and include the original, unaltered content below it.',
       mapping = "<leader>ccc",
       description = "Git commit message",
     },
@@ -53,7 +53,7 @@ vim.api.nvim_create_user_command("CopilotChatInline", function(args)
     window = {
       layout = "float",
       relative = "cursor",
-      width = 1,
+      width = 0.8,
       height = 0.4,
       row = 1,
     },
@@ -75,6 +75,7 @@ end, { nargs = "*", range = true })
 
 -- Chat with Copilot in visual mode
 vmap("<leader>ccv", ":CopilotChatVisual<CR>")
+vmap("<leader>ccd", ":CopilotChatDocs<CR>")
 vmap("<leader>cci", ":CopilotChatInline<CR>")
 -- Quick chat with Copilot
 nmap("<leader>ccq", ":CopilotChatQuick<CR>")
