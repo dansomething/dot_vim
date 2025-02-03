@@ -57,6 +57,7 @@ set cmdheight=2    " Make the command area two lines high
 set encoding=utf-8
 set noequalalways  " Don't auto resize after splitting or closing a window
 set noshowmode     " Don't show the mode since Powerline shows it
+set splitright     " Open the new window right of the current one
 set title          " Set the title of the window in the terminal to the file
 set textwidth=120  " 80 is too narrow anymore
 if exists('+colorcolumn')
