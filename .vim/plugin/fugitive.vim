@@ -16,5 +16,6 @@ nnoremap <Leader>gx :wincmd h<CR>:q<CR>
 nnoremap <Leader>gi :Git<space>
 " Undo the last commit
 command! Gcundo :Git reset HEAD~1
-
+nnoremap <Leader>gcu :Gcundo<CR>
 nnoremap <Leader>gs :20split\|0Git<CR>
+nnoremap <Leader>gld :Git ld<CR>
