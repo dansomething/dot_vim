@@ -75,6 +75,7 @@ Plug 'yssl/QFEnter'
 
 if has('nvim')
   Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' } | Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
 " Add plugins to &runtimepath

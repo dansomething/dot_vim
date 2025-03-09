@@ -1,8 +1,12 @@
+local group = vim.api.nvim_create_augroup('NeoVimRc', { clear = true })
+
 -- ------------------------
 -- Common Utility Functions
 -- ------------------------
 
-_G.map = function(shortcut, command, mode, opts)
+local M = {}
+
+M.map = function(shortcut, command, mode, opts)
   local options = { noremap = true, silent = true }
   mode = mode or "n"
 
@@ -13,23 +17,23 @@ _G.map = function(shortcut, command, mode, opts)
   vim.keymap.set(mode, shortcut, command, options)
 end
 
-_G.nmap = function(shortcut, command)
-  map(shortcut, command, "n")
+M.nmap = function(shortcut, command)
+  M.map(shortcut, command, "n")
 end
 
-_G.imap = function(shortcut, command)
-  map(shortcut, command, "i")
+M.imap = function(shortcut, command)
+  M.map(shortcut, command, "i")
 end
 
-_G.vmap = function(shortcut, command)
-  map(shortcut, command, "v")
+M.vmap = function(shortcut, command)
+  M.map(shortcut, command, "v")
 end
 
 -- ------------------------
 -- Closes all floating windows, useful for cleaning up messed up pop-ups
 -- relates to vimpspector debug timeout
 -- ------------------------
-_G.CloseAllFloatingWindows = function()
+M.CloseAllFloatingWindows = function()
   local closed_windows = {}
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     local config = vim.api.nvim_win_get_config(win)
@@ -41,4 +45,11 @@ _G.CloseAllFloatingWindows = function()
   print(string.format("Closed %d windows: %s", #closed_windows, vim.inspect(closed_windows)))
 end
 -- :help command-attributes
-vim.api.nvim_create_user_command("CloseAllFloatingWindows", _G.CloseAllFloatingWindows, { bang = true, nargs = 0 })
+vim.api.nvim_create_user_command("CloseAllFloatingWindows", M.CloseAllFloatingWindows, { bang = true, nargs = 0 })
+
+M.au = function(event, opts)
+  opts['group'] = group
+  return vim.api.nvim_create_autocmd(event, opts)
+end
+
+return M

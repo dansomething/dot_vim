@@ -5,7 +5,10 @@
 -- https://jsuarez.dev/blog/copilot_chat_neovim/
 local chat = require("CopilotChat")
 local select = require("CopilotChat.select")
+local utils = require("utils")
 chat.setup({
+  model = "claude-3.5-sonnet",
+
   window = {
     -- layout = "float", -- 'vertical', 'horizontal', 'float', 'replace'
     -- width = 0.5, -- fractional width of parent, or absolute width in columns when > 1
@@ -20,14 +23,25 @@ chat.setup({
     -- zindex = 1, -- determines if window is on top or below other floating windows
   },
 
-  mappings = {
-    reset = {
-      normal = "<C-r>",
-      insert = "<C-r>",
-    },
-  },
-
   prompts = {
+    Explain = {
+      mapping = "<leader>cce",
+    },
+    Review = {
+      mapping = "<leader>ccr",
+    },
+    Tests = {
+      mapping = "<leader>cct",
+    },
+    Fix = {
+      mapping = "<leader>ccf",
+    },
+    Optimize = {
+      mapping = "<leader>cco",
+    },
+    Docs = {
+      mapping = "<leader>ccd",
+    },
     Commit = {
       prompt = '> #git:staged\n\nWrite a commit message following the example in comments at the top of the staged diff. Use the commitizen convention where appropriate. Ensure the title has a maximum of 50 characters and the message is wrapped at 72 characters. Replace everything before the colon in the title with the code area and subarea derived from the most commonly changed file paths in the diff. The code and subarea should be in the format "code/subarea". Explain the change in detail and why it is necessary. Add this message at the top and include the original, unaltered content below it.',
       mapping = "<leader>ccc",
@@ -47,8 +61,9 @@ vim.api.nvim_create_user_command("CopilotChatVisual", function(args)
 end, { nargs = "*", range = true })
 
 -- Inline chat with Copilot
-vim.api.nvim_create_user_command("CopilotChatInline", function(args)
-  chat.ask(args.args, {
+vim.api.nvim_create_user_command("CopilotChatInline", function(_)
+  local input = vim.fn.input("Inline Chat: ")
+  chat.ask(input, {
     selection = select.visual,
     window = {
       layout = "float",
@@ -73,27 +88,23 @@ vim.api.nvim_create_user_command("CopilotChatQuick", function()
   end
 end, { nargs = "*", range = true })
 
--- Chat with Copilot in visual mode
-vmap("<leader>ccv", ":CopilotChatVisual<CR>")
-vmap("<leader>ccd", ":CopilotChatDocs<CR>")
-vmap("<leader>cci", ":CopilotChatInline<CR>")
--- Quick chat with Copilot
-nmap("<leader>ccq", ":CopilotChatQuick<CR>")
-vmap("<leader>ccq", ":CopilotChatQuick<CR>")
--- Code related commands
-nmap("<leader>cco", ":CopilotChatOpen<CR>")
-nmap("<leader>ccb", ":CopilotChatBuffer<CR>")
-nmap("<leader>cce", ":CopilotChatExplain<CR>")
-vmap("<leader>cce", ":CopilotChatExplain<CR>")
-nmap("<leader>cct", ":CopilotChatTests<CR>")
-nmap("<leader>ccr", ":CopilotChatReview<CR>")
--- TODO Add a prompt name called BatterNamings
--- Keymap("<leader>ccn", ":CopilotChatBetterNamings<CR>", "n")
--- Debug
-nmap("<leader>ccd", ":CopilotChatDebugInfo<CR>")
--- Fix the issue with diagnostic
-nmap("<leader>ccf", ":CopilotChatFixDiagnostic<CR>")
--- Clear buffer and chat history
-nmap("<leader>ccl", ":CopilotChatReset<CR>")
+utils.au("BufEnter", {
+  pattern = "copilot-*",
+  callback = function()
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
+    vim.opt.listchars:append({ tab = "  " })
+  end,
+})
+
 -- Toggle Copilot Chat Toggle
-nmap("<leader>ccv", ":CopilotChatToggle<CR>")
+utils.nmap("<leader>ccv", ":CopilotChatToggle<CR>")
+utils.vmap("<leader>ccv", ":CopilotChat<CR>")
+-- Inline quick chat with Copilot
+utils.nmap("<leader>cci", ":CopilotChatInline<CR>")
+utils.vmap("<leader>cci", ":CopilotChatInline<CR>")
+-- Quick chat with Copilot
+utils.nmap("<leader>ccq", ":CopilotChatQuick<CR>")
+utils.vmap("<leader>ccq", ":CopilotChatQuick<CR>")
+-- Clear buffer and chat history
+utils.nmap("<leader>ccl", ":CopilotChatReset<CR>")
