@@ -74,7 +74,8 @@ Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
 
 if has('nvim')
-  Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' } | Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'CopilotC-Nvim/CopilotChat.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 endif
 
