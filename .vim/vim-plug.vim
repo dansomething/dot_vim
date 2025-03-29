@@ -23,7 +23,7 @@ Plug 'Chiel92/vim-autoformat', { 'on': ['Autoformat', 'CurrentFormat'] }
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'Valloric/ListToggle'
 Plug 'andymass/vim-matchup'
-Plug 'antoinemadec/coc-fzf', { 'branch': 'release' }
+Plug 'antoinemadec/coc-fzf'
 Plug 'ap/vim-css-color', { 'for': ['css', 'less', 'sass', 'scss'] }
 Plug 'artnez/vim-wipeout', { 'on': ['Wipeout'] }
 Plug 'charlespascoe/vim-go-syntax'
