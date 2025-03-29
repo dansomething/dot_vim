@@ -35,7 +35,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'fidian/hexmode'
-Plug 'github/copilot.vim', { 'branch': 'release' }
+Plug 'github/copilot.vim'
 Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install', 'for': 'markdown' }
 Plug 'janko-m/vim-test'
