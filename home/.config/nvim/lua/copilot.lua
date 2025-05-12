@@ -24,6 +24,7 @@ chat.setup({
   },
 
   prompts = {
+    -- Code related prompts
     Explain = {
       mapping = "<leader>cce",
     },
@@ -42,16 +43,25 @@ chat.setup({
     Docs = {
       mapping = "<leader>ccd",
     },
+    FixError = "Please explain the error in the following text and provide a solution.",
+    BetterNamings = "Please provide better names for the following variables and functions.",
+    Documentation = "Please provide documentation for the following code.",
+    SwaggerApiDocs = "Please provide documentation for the following API using Swagger.",
+    SwaggerJsDocs = "Please write JSDoc for the following API using Swagger.",
     Commit = {
-      prompt = '> #git:staged\n\nWrite a commit message following the example in comments at the top of the staged diff. Use the commitizen convention where appropriate. Ensure the title has a maximum of 50 characters and the message is wrapped at 72 characters. Replace everything before the colon in the title with the code area and subarea derived from the most commonly changed file paths in the diff. The code and subarea should be in the format "code/subarea". Explain the change in detail and why it is necessary. Add this message at the top and include the original, unaltered content below it.',
       mapping = "<leader>ccc",
-      description = "Git commit message",
     },
     Refactor = {
       prompt = "> /COPILOT_REFACTOR\n\nYou are now an expert in code maintainability. You recommend refactoring steps for the provided code without changing the functionality. Do not break the code. Make suggestions to improve the code. Pay particular attention to improving the following code qualities: readability, maintainability, modularity, extensibility, performance optimization, bug fixes, names and documentation.",
       mapping = "<leader>ccR",
       description = "Refactor code",
     },
+
+    -- Text related prompts
+    Summarize = "Please summarize the following text.",
+    Spelling = "Please correct any grammar and spelling errors in the following text.",
+    Wording = "Please improve the grammar and wording of the following text.",
+    Concise = "Please rewrite the following text to make it more concise.",
   },
 })
 
