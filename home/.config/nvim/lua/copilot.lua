@@ -63,6 +63,14 @@ chat.setup({
     Wording = "Please improve the grammar and wording of the following text.",
     Concise = "Please rewrite the following text to make it more concise.",
   },
+
+  mappings = {
+    -- Reset the chat buffer
+    reset = {
+      normal = "<C-x>",
+      insert = "<C-x>",
+    },
+  },
 })
 
 -- Chat with Copilot about visual selection
@@ -117,4 +125,4 @@ utils.vmap("<leader>cci", ":CopilotChatInline<CR>")
 utils.nmap("<leader>ccq", ":CopilotChatQuick<CR>")
 utils.vmap("<leader>ccq", ":CopilotChatQuick<CR>")
 -- Clear buffer and chat history
-utils.nmap("<leader>ccl", ":CopilotChatReset<CR>")
+utils.nmap("<leader>ccx", ":CopilotChatReset<CR>")
