@@ -74,9 +74,11 @@ Plug 'wincent/loupe'
 Plug 'yssl/QFEnter'
 
 if has('nvim')
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'CopilotC-Nvim/CopilotChat.nvim'
+  Plug 'MeanderingProgrammer/render-markdown.nvim'
+  Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
 endif
 
 " Add plugins to &runtimepath

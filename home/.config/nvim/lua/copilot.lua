@@ -9,6 +9,10 @@ local utils = require("utils")
 chat.setup({
   -- model = "claude-3.5-sonnet",
 
+  highlight_headers = false,
+  separator = "---",
+  error_header = "> [!ERROR] Error",
+
   window = {
     -- layout = "float", -- 'vertical', 'horizontal', 'float', 'replace'
     -- width = 0.5, -- fractional width of parent, or absolute width in columns when > 1
