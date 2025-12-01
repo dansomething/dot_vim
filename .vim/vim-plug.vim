@@ -32,7 +32,10 @@ Plug 'dansomething/vim-hackernews', { 'on': 'HackerNews' }
 Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'easymotion/vim-easymotion'
-Plug 'editorconfig/editorconfig-vim'
+if !has('nvim') || (v:lua.vim.version().major == 0 && v:lua.vim.version().minor < 9)
+  " Run this only on for versions older than 0.9
+  Plug 'editorconfig/editorconfig-vim'
+endif
 Plug 'edkolev/tmuxline.vim'
 Plug 'fidian/hexmode'
 Plug 'github/copilot.vim'
