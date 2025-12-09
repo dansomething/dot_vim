@@ -1,4 +1,7 @@
-require("ai-pane").setup()
+local is_ai_pane_available, aipane = pcall(require, "ai-pane")
+if is_ai_pane_available then
+  aipane.setup()
+end
 
 local is_render_markdown_available, render_markdown = pcall(require, "render-markdown")
 if is_render_markdown_available then
