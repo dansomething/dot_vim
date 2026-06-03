@@ -37,7 +37,6 @@ endif
 Plug 'edkolev/tmuxline.vim'
 Plug 'fidian/hexmode'
 Plug 'github/copilot.vim'
-Plug 'honza/vim-snippets'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jszakmeister/vim-togglecursor'
@@ -52,7 +51,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'preservim/vim-indent-guides'
-Plug 'puremourning/vimspector'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'sheerun/vim-polyglot'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -80,6 +78,12 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
 endif
+
+if has('python3')
+  Plug 'honza/vim-snippets'
+  Plug 'puremourning/vimspector'
+endif
+
 
 " Add plugins to &runtimepath
 call plug#end()
