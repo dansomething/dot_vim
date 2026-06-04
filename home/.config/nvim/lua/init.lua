@@ -1,3 +1,8 @@
+local is_coverage_available, coverage = pcall(require, "coverage")
+if is_coverage_available then
+  coverage.setup()
+end
+
 local is_ai_pane_available, aipane = pcall(require, "ai-pane")
 if is_ai_pane_available then
   aipane.setup()

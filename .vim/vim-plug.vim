@@ -73,6 +73,7 @@ Plug 'yssl/QFEnter'
 if has('nvim')
   Plug 'CopilotC-Nvim/CopilotChat.nvim'
   Plug 'MeanderingProgrammer/render-markdown.nvim'
+  Plug 'andythigpen/nvim-coverage'
   Plug 'dansomething/ai-pane.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
