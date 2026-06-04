@@ -77,7 +77,6 @@ if has('nvim')
   Plug 'dansomething/ai-pane.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'ravitemer/mcphub.nvim', { 'do': 'npm install -g mcp-hub@latest' }
 endif
 
 if has('python3')
