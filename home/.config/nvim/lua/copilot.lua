@@ -6,7 +6,8 @@
 local chat = require("CopilotChat")
 local utils = require("utils")
 chat.setup({
-  model = "claude-haiku-4.5",
+  -- Fallback to auto now.
+  -- model = "claude-haiku-4.5",
 
   highlight_headers = false,
   separator = "---",
