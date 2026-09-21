@@ -19,7 +19,7 @@ runtime autocmds.vim
 runtime largefiles.vim
 
 " Extra local only config that is not committed
-let s:extraFile=expand("~/.vim/extra.vim")
+let s:extraFile=expand("~/.vim/extra.vim") && !has('nvim')
 if filereadable(s:extraFile)
   exe "source " . s:extraFile
 endif
