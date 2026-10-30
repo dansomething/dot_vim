@@ -30,6 +30,4 @@
   ],
   "suggest.autoTrigger": "trigger",
   "suggest.triggerCompletionWait": 50,
-  // https://github.com/xiyaowong/coc-sumneko-lua/blob/main/settings.md
-  "sumneko-lua.enableNvimLuaDev": true
 }
